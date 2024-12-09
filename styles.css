@@ -61,7 +61,8 @@ nav {
 
 /* Hero section */
 .hero {
-    height: 30vh;
+    min-height: 60vh;
+    padding: 120px 5% 60px;
     background-color: var(--darker-bg);
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.7),
@@ -103,29 +104,31 @@ nav {
     width: 100%;
     margin: 0 auto;
     padding: 0 2rem;
-    text-align: center;
+    text-align: left;
 }
 
 /* Update hero text styles */
 .hero h1 {
     font-family: var(--font-headers);
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.2;
     color: var(--text-light);
+    max-width: 800px;
 }
 
 .hero p {
     font-family: var(--font-body);
     color: var(--text-light);
     opacity: 0.9;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 400;
-    margin-top: 0.5rem;
+    margin-bottom: 2rem;
     letter-spacing: 0.01em;
+    max-width: 600px;
 }
 
 /* Add animations */
@@ -148,6 +151,9 @@ nav {
 .hero-buttons {
     position: relative;
     z-index: 3;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
 }
 
 .cta-button.primary {
@@ -202,9 +208,9 @@ h2 {
 /* Services */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -216,6 +222,10 @@ h2 {
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .service-card::before {
@@ -365,15 +375,27 @@ footer {
     }
     
     .hero {
-        height: 40vh;
+        padding: 100px 5% 40px;
     }
     
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
     }
     
     .hero-buttons {
         flex-direction: column;
+        width: 100%;
+    }
+    
+    .cta-button {
+        width: 100%;
+        text-align: center;
     }
     
     .trust-items {
@@ -675,5 +697,58 @@ footer {
     
     .checkbox-grid {
         grid-template-columns: 1fr;
+    }
+} 
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.benefit-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    color: #007bff;
+    min-width: 50px;
+    text-align: center;
+}
+
+.benefit-text h4 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.benefit-text p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .benefit-card {
+        padding: 1rem;
     }
 } 
